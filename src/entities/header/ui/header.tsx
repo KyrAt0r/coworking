@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import dayjs, { Dayjs } from 'dayjs';
@@ -25,9 +25,11 @@ dayjs.locale('ru')
 dayjs.extend(isSameOrAfter)
 dayjs.extend(isSameOrBefore)
 
+type RangeValue = Parameters<NonNullable<React.ComponentProps<typeof DatePicker.RangePicker>['onChange']>>[0]
+
 export function Header() {
     const [selectedDate, setSelectedDate] = useState<Dayjs | null>(null);
-    const [selectedTimeRange, setSelectedTimeRange] = useState<[Dayjs, Dayjs] | null>(null);
+    const [selectedTimeRange, setSelectedTimeRange] = useState<RangeValue | null>(null);
 
     const timeFormat = 'HH:mm';
     const dateFormat = 'DD.MM.YY';
@@ -73,7 +75,8 @@ export function Header() {
         setSelectedDate(value);
     };
 
-    const onChangeTime = (value: [Dayjs, Dayjs] | null) => {
+    const onChangeTime = (value: RangeValue | null) => {
+        console.log(value)
         setSelectedTimeRange(value);
     };
 

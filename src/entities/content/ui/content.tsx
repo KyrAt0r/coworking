@@ -68,7 +68,7 @@ export function Content() {
         }
     };
 
-    const handleClick = (event) => {
+    const handleClick = (event: any) => {
         const clickedElement = event.target.closest('[table_id]');
         const table_id = clickedElement?.getAttribute('table_id')
         if (table_id && clickedElement) {
