@@ -15,6 +15,7 @@ import {
     setSelectedEndDateTime,
     setSelectedStartDateTime
 } from "../../../pages/model/store.ts";
+import {LegendModal} from "../../../features/legendModal/legendModal.tsx";
 
 const IcoMoonIcon = () => {
     return <i className="icon-calendar" />;
@@ -58,9 +59,7 @@ export function Header() {
         Modal.info({
             title: 'Инструкция',
             content: (
-                <div>
-                    <p>Как забронировать место</p>
-                </div>
+                <LegendModal/>
             ),
             onOk() { },
         });
@@ -112,7 +111,7 @@ export function Header() {
                         changeOnBlur={true}
                         onChange={onChangeTime}
                     />
-                    <Button onClick={info} icon={<InfoCircleOutlined />} />
+                    <Button onClick={info} icon={<InfoCircleOutlined />} title={'Инструкция'}>Инструкция</Button>
                 </ConfigProvider>
             </div>
         </header>
