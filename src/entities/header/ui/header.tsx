@@ -51,8 +51,6 @@ export function Header() {
 
                 setSelectedStartDateTime(format(startDateTime, 'yyyy-MM-dd\'T\'HH:mm:ss'));
                 setSelectedEndDateTime(format(endDateTime, 'yyyy-MM-dd\'T\'HH:mm:ss'));
-
-                console.log(startDateTime)
             }
         }
     }, [selectedDate, selectedTimeRange]);
@@ -76,7 +74,6 @@ export function Header() {
     };
 
     const onChangeTime = (value: RangeValue | null) => {
-        console.log(value)
         setSelectedTimeRange(value);
     };
 

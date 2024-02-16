@@ -1,15 +1,19 @@
-import './content.scss';
-import {useEffect, useRef} from 'react';
+import {useEffect, useRef, useState} from 'react';
 import {useStore} from "effector-react";
-import {$selectedEndDateTime, $selectedStartDateTime} from "../../../pages/model/store.ts";
+import {$isBothDatesSelected, $selectedEndDateTime, $selectedStartDateTime} from "../../../pages/model/store.ts";
 import {TransformComponent, TransformWrapper} from "react-zoom-pan-pinch";
 import {ReactComponent as RoomPlan} from '../../../assets/tables/cw.svg';
+import {getWorkplacesByDate} from "../../../api/coworking.ts";
+import React from 'react';
 
 type TableElement = SVGElement & { table_id: string };
 
 export function Content() {
-    const start = useStore($selectedStartDateTime)
-    const end = useStore($selectedEndDateTime)
+    // @ts-ignore
+    const [workplaces, setWorkplaces] = useState(null);
+    const isBothDatesSelected = useStore($isBothDatesSelected);
+    const selectedStartDateTime = useStore($selectedStartDateTime);
+    const selectedEndDateTime = useStore($selectedEndDateTime);
     const svgWidth = 926;  // Ширина вашего SVG
     const svgHeight = 642; // Высота вашего SVG
     const initialTranslateX = window.innerWidth / 2 - svgWidth / 2;   // Начальная позиция X
@@ -34,10 +38,21 @@ export function Content() {
     ]
 
     useEffect(() => {
-        console.log(start, end)
         changeRectColors();
-    }, [start, end])
-    
+    }, )
+
+    useEffect(() => {
+        if (isBothDatesSelected && selectedStartDateTime && selectedEndDateTime) {
+            getWorkplacesByDate(selectedStartDateTime, selectedEndDateTime)
+                .then(response => {
+                    setWorkplaces(response.data);
+                    console.log(response.data)
+                })
+                .catch(error => console.error(error));
+        }
+    }, [isBothDatesSelected, selectedStartDateTime, selectedEndDateTime]);
+
+
 
     useEffect(() => {
         const transformComponent = svgRef.current;
