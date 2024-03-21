@@ -1,12 +1,13 @@
-import "./index.scss"
-import {Coworking} from "../pages/coworking.tsx";
-import React from "react";
+import React from 'react';
 
-export function App() {
+import {Coworking} from '../pages/Coworking.tsx';
 
+import './index.scss';
+
+export default function App() {
   return (
-      <div className="app">
-          <Coworking/>
-      </div>
-  )
+    <div className="app">
+      <Coworking />
+    </div>
+  );
 }

@@ -1,12 +1,13 @@
-import {Header} from "../entities/header/ui/header.tsx";
-import {Content} from "../entities/content/ui/content.tsx";
-import React from "react";
+import React from 'react';
 
-export function Coworking() {
-    return(
-        <>
-            <Header/>
-            <Content/>
-        </>
-    )
-}
+import {Content} from '../entities/content/ui/content';
+import {Header} from '../entities/header/ui/header';
+
+export const Coworking = () => {
+  return (
+    <>
+      <Header />
+      <Content />
+    </>
+  );
+};

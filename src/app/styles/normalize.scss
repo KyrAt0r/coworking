@@ -6,12 +6,11 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
 .app {
   position: relative;
-  height: 100vh;
 }
 
 .ant-picker-cell-inner:focus {
@@ -19,19 +18,19 @@ body {
 }
 
 .ant-picker-cell-selected {
-  .ant-picker-cell-inner{
+  .ant-picker-cell-inner {
     background-color: #b22222 !important;
   }
 }
 
 .ant-picker-cell-today {
-  .ant-picker-cell-inner::before{
+  .ant-picker-cell-inner::before {
     border-color: #b22222 !important;
   }
 }
 
 .ant-btn-primary {
-  background-color: #4CAF50 !important;
+  background-color: #4caf50 !important;
 }
 
 .ant-btn-primary:disabled {

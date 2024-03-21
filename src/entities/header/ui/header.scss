@@ -1,14 +1,13 @@
-.header {
+.coworking-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
-  width: 100%;
+  padding: 16px;
   height: var(--header-height);
   background-color: #eee;
   border: 1px solid #ddd;
 
-  .сity {
+  .filter-container {
     display: inline-flex;
     align-items: center;
 
@@ -17,19 +16,10 @@
     }
   }
 
-  .ant-select {
-    margin: 0 5px;
-  }
-
-  .ant-picker {
-    margin: 0 5px;
-
-  }
-
+  .ant-select,
+  .ant-picker,
   .ant-btn {
     margin: 0 5px;
+    height: 38px;
   }
-
 }
-
-
