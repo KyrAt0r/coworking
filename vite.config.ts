@@ -18,4 +18,11 @@ export default defineConfig({
   },
   base: './',
   plugins: [react(), svgr()],
+  server: {
+    host:true,
+    port: 8080,
+    watch: {
+      usePolling: true
+    }
+  },
 });

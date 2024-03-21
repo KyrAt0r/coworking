@@ -1,3 +1,37 @@
+## Разработка для фронт-энд в Docker
+
+1. Для разработки на стороне фронт-энд на компьютере должен быть установлен докер.
+
+2. После установки докера, нужно перейти в командной строке в каталог проекта
+
+3. Далее создаем Docker образ, с помощью команды:
+   ```bash
+   docker build -t coworking .
+   ```
+   или если есть утилита Make :
+   ```bash
+   make build
+   ```
+
+4. Запускаем Docker контейнер:
+   ```bash
+   docker-compose up
+   ```
+   или:
+   ```bash
+   make run
+   ```
+
+5. Остановка Docker контейнера:
+   ```bash
+   docker stop coworking
+   ```
+   или:
+   ```bash
+   make stop
+   ```
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
