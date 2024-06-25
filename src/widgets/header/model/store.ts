@@ -1,9 +1,9 @@
 import dayjs, {Dayjs} from 'dayjs';
 import {createEffect, createStore, forward} from 'effector';
 
-import type {Types} from '../types.ts';
+import type {Types} from "../lib/types.ts";
 
-//Сторы
+// Сторы
 export const $selectedDate = createStore<Dayjs | null>(dayjs().second(0));
 export const $selectedTimeRange = createStore<Types | null>(null);
 export const $selectedStartDateTime = createStore<string | null>(null);

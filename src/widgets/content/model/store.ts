@@ -1,8 +1,9 @@
 import {combine, createEffect, createStore} from 'effector';
+import {$selectedEndDateTime, $selectedStartDateTime} from "../../header/model/store.ts";
 
-import {createAppointment, getWorkplacesByDate} from '../../../api/coworking.ts';
-import type {WorkSpace} from '../../../shared/interfaces/work-space.ts';
-import {$selectedEndDateTime, $selectedStartDateTime} from '../../header/model/store.ts';
+import {createAppointment, getWorkplacesByDate} from '../../../shared/api/coworking.ts';
+import type {WorkSpace} from '../../../shared/lib/interfaces/work-space.ts';
+
 
 export const $workSpaceList = createStore<WorkSpace[] | null>(null);
 export const $loadWorkplacesError = createStore<Error | null>(null);
@@ -62,3 +63,8 @@ export const createAppointmentFx = createEffect(
     }
   },
 );
+
+export const $appointProcessPending = combine([
+    createAppointmentFx.pending,
+    loadWorkplacesFx.pending,
+]).map((store) => store.includes(true));

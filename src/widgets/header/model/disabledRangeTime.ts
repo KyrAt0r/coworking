@@ -1,9 +1,8 @@
 import dayjs from 'dayjs';
 import {useStore} from 'effector-react';
+import {$selectedDate} from "./store.ts";
 
-import {$selectedDate} from './store.ts';
-
-export const useDisabledTime = () => {
+export const disabledRangeTime = () => {
   const selectedDate = useStore($selectedDate);
 
   const disabledDateTime = () => {

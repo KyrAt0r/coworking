@@ -7,6 +7,8 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'plugin:prettier/recommended',
     'prettier',
+    '@feature-sliced',
+    'plugin:@conarti/feature-sliced/recommended',
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',

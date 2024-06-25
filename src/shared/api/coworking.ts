@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import type {WorkSpace} from '../shared/interfaces/work-space.ts';
+import type {WorkSpace} from '../lib/interfaces/work-space.ts';
 
 interface WorkSpaceResponse {
   data: WorkSpace[];

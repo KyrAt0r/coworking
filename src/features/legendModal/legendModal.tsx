@@ -50,10 +50,8 @@ export function LegendModal() {
   ];
 
   return (
-    <>
       <div>
-        <Table dataSource={dataSource} columns={columns} size="small" pagination={false} />
+          <Table dataSource={dataSource} columns={columns} size="small" pagination={false} />
       </div>
-    </>
   );
 }
