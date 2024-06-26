@@ -24,7 +24,7 @@ import {InstructionButton} from './InstructionButton.tsx';
 import {Colors} from '../../../shared/ui/colors.ts';
 import {dateFormat, timeFormat, disabledDate} from '../model/constants.ts';
 import {formatDateTime} from '../lib/formatDateTime.ts';
-import './header.scss';
+import './Header.scss';
 import 'dayjs/locale/ru';
 
 dayjs.extend(isSameOrAfter);

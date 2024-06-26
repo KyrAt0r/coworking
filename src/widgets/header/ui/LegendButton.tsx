@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Modal } from 'antd';
 import { InfoCircleOutlined } from '@ant-design/icons';
 import { Colors } from '../../../shared/ui/colors.ts';
-import { LegendModal } from '../../../features/legendModal/legendModal.tsx';
+import { LegendModal } from '../../../features/legendModal/ui/legendModal.tsx';
 
 const showModal = () => {
     Modal.info({

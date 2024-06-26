@@ -97,7 +97,7 @@ export const Content: React.FC = () => {
                             startDateTime: selectedStartDateTime,
                             endDateTime: selectedEndDateTime,
                         });
-                    }, 2000);
+                    }, 2000); // Костыль для того что бы места успевали прогружаться на беке, так как с бека нет отета типо "Всё ок, я забронил можно подргружать актуальные данные"
                 })
                 .catch(errorMessage);
         }
