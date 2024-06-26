@@ -3,6 +3,7 @@ import React, { useCallback, useRef, useState, useEffect } from 'react';
 import { TransformComponent, TransformWrapper } from 'react-zoom-pan-pinch';
 
 import { ReactComponent as RoomPlan } from '../../../assets/tables/cw.svg';
+import {initialTranslateX, initialTranslateY, svgHeight, svgWidth} from "../lib/const.ts";
 import {
     $isBothDatesSelected,
     $workSpaceList,
@@ -22,11 +23,6 @@ import { SpinIndicator } from './SpinIndicator.tsx';
 import './Content.scss';
 
 type TableElement = SVGElement & { table_id: string };
-
-const svgWidth = 926;
-const svgHeight = 642;
-const initialTranslateX = 543.3000183105469;
-const initialTranslateY = 32.100006103515625;
 
 export const Content: React.FC = () => {
     const [isModalVisible, setIsModalVisible] = useState(false);
